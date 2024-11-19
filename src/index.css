@@ -1,0 +1,12 @@
+/* Import Font Awesome CSS */
+@import '@fortawesome/fontawesome-free/css/all.min.css'; /* Move this to the top */
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
