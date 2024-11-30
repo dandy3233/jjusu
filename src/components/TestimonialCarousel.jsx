@@ -22,7 +22,7 @@ function TestimonialCarousel() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
+    <div className="py-5  max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
         <span className="text-orange-400 text-3xl sm:text-4xl">Student Says</span> About Us
       </h2>

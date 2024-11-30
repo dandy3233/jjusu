@@ -15,7 +15,8 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
-        marquee: 'marquee 70s linear infinite',
+        marquee: 'marquee 15s linear infinite',
+        
       },
     },
   },

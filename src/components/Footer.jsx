@@ -18,10 +18,10 @@ const Footer = () => {
               <i className="fas fa-envelope text-orange-500 mr-2"></i> {/* Email Icon */}
               Email:{" "}
               <a
-                href="mailto:jjustudentunion@gmail.com"
+                href="mailto:jjustudentsunion@gmail.com"
                 className="text-orange-500 hover:text-orange-400"
               >
-                jjustudentunion@gmail.com
+                jjustudentsunion@gmail.com
               </a>
             </li>
             <li>
@@ -86,16 +86,22 @@ const Footer = () => {
           <div className="mt-6">
             <h4 className="text-lg font-semibold mb-2">Connect With Us</h4>
             <div className="flex space-x-5 justify-start">
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
-                <i className="fab fa-twitter"></i> {/* Twitter Icon */}
+              {/* Telegram Icon with Link */}
+              <a
+                href="https://t.me/JJUSUINFOC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl"
+              >
+                <i className="fab fa-telegram-plane"></i> {/* Telegram Icon */}
               </a>
               <a href="#" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
                 <i className="fab fa-facebook"></i> {/* Facebook Icon */}
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
+              <a href="https://www.instagram.com/jjustudentunion" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
                 <i className="fab fa-instagram"></i> {/* Instagram Icon */}
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
+              <a href="https://www.tiktok.com/@jjustudentunion" className="text-gray-400 hover:text-orange-500 transition duration-150 text-2xl">
                 <i className="fab fa-tiktok"></i> {/* TikTok Icon */}
               </a>
             </div>

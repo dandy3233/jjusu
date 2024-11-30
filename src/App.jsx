@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       {/* Static components always visible */}
-      <Nav /> {/* Secondary navigation */}
+     
       <Navbar /> {/* Main navigation */}
       <div id="home">
         <Hero /> {/* Hero section */}

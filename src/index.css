@@ -1,5 +1,5 @@
-/* Import Font Awesome CSS */
-@import '@fortawesome/fontawesome-free/css/all.min.css'; /* Move this to the top */
+/* Import Font Awesome CSS (corrected) */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
 /* Tailwind CSS directives */
 @tailwind base;

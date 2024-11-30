@@ -1,4 +1,3 @@
-// src/components/ImageCollage.jsx
 import React from 'react';
 import ImageCard from './ImageCard'; // Correct path for ImageCard component
 
@@ -12,11 +11,10 @@ import image5 from '../assets/image2.png';
 
 const ImageCollage = () => {
   // Array of image sources (now using the imported images)
-  const imageSources = [image1, image2, image3, image2, image5, image1, image2, image3,];
+  const imageSources = [image1, image2, image3, image2, image5, image1, image2, image3];
 
   return (
     <div className="p-8">
-      {/* <h2 className="text-3xl font-semibold mb-6">Our Instagram Collage</h2> */}
       {/* Grid of ImageCards with small gaps */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
         {imageSources.map((imageSrc, index) => (

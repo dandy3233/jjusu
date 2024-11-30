@@ -29,9 +29,12 @@ const Hero = () => {
         <p className="text-lg md:text-xl mb-6">
           Our union our voice
         </p>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-md transition">
-          Contact Us
-        </button>
+        <a href="#contact">
+  <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-md transition">
+    Contact Us
+  </button>
+</a>
+
       </div>
     </section>
   );

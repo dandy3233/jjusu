@@ -1,108 +1,120 @@
 import React, { useState } from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Import Font Awesome CSS
+import logo from "../assets/image.png"; // Adjust the import path
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-lg">
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-gray-800 focus:outline-none"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
-      </button>
+    <header className="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+      {/* Top Section */}
+      <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+        {/* Logo and Title */}
+        <div className="text-center md:text-left">
+          <h1 className="text-2xl font-bold text-gray-800">
+            JJU <br />
+            <span className="text-orange-500">STUDENT UNION</span>
+          </h1>
+        </div>
 
-      <nav className="bg-gray-800">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 text-white items-center">
-            <li className="flex items-center">
-              <i className="fas fa-home mr-2"></i> {/* Home Icon */}
-              <a href="#home" className="hover:text-orange-500">
-                Home
-              </a>
-            </li>
-            <li className="flex items-center">
-              <i className="fas fa-info-circle mr-2"></i> {/* About Icon */}
-              <a href="#about" className="hover:text-orange-500">
-                About
-              </a>
-            </li>
-            <li className="flex items-center">
-              <i className="fas fa-users mr-2"></i> {/* Staff Icon */}
-              <a href="#staff" className="hover:text-orange-500">
-                Staff
-              </a>
-            </li>
-            <li className="flex items-center">
-              <i className="fas fa-envelope mr-2"></i> {/* Contact Icon */}
-              <a href="#contact" className="hover:text-orange-500">
-                Contact
-              </a>
-            </li>
-          </ul>
-          {/* Search Bar */}
-          <input
-            type="text"
-            placeholder="Search..."
-            className="hidden md:block rounded-md px-3 py-1 bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        {/* Contact Info */}
+        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-gray-600">
+          <p className="flex items-center">
+            <i className="fas fa-envelope text-orange-500 mr-2"></i>
+            <a
+              href="mailto:jjustudentsunion@gmail.com"
+              className="text-orange-500 hover:underline"
+            >
+              jjustudentsunion@gmail.com
+            </a>
+          </p>
+          <p className="flex items-center">
+            <i className="fas fa-phone text-orange-500 mr-2"></i>
+            <a
+              href="tel:+1235235598"
+              className="text-orange-500 hover:underline"
+            >
+              +1235 2355 98
+            </a>
+          </p>
+        </div>
+
+        {/* Logo Image (Hidden on Mobile) */}
+        <div className="mt-4 md:mt-0 hidden md:block">
+          <img
+            src={logo}
+            alt="Student Union Logo"
+            className="h-16 w-16 rounded-full border-2 border-orange-500"
           />
+        </div>
+      </div>
+
+      {/* Navigation Section */}
+      <div className="bg-gray-800">
+        <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <i
+              className={`fas ${
+                isMobileMenuOpen ? "fa-times" : "fa-bars"
+              } text-xl transition-transform transform duration-300`}
+            ></i>
+          </button>
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex space-x-6 text-white">
+            <a href="#home" className="hover:text-orange-500 flex items-center">
+              <i className="fas fa-home mr-2"></i> Home
+            </a>
+            <a href="#about" className="hover:text-orange-500 flex items-center">
+              <i className="fas fa-info-circle mr-2"></i> About
+            </a>
+            <a href="#staff" className="hover:text-orange-500 flex items-center">
+              <i className="fas fa-users mr-2"></i> Staff
+            </a>
+            <a href="#contact" className="hover:text-orange-500 flex items-center">
+              <i className="fas fa-envelope mr-2"></i> Contact
+            </a>
+          </nav>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-gray-800 text-white px-4 py-2">
+          <nav
+            className="md:hidden bg-gray-800 text-white px-4 py-2 transform"
+            style={{
+              transition: "transform 0.5s ease-in-out",
+              transform: isMobileMenuOpen ? "translateY(0)" : "translateY(-100%)",
+            }}
+          >
             <ul className="space-y-4">
-              <li className="flex items-center">
-                <i className="fas fa-home mr-2"></i> {/* Home Icon */}
+              <li>
                 <a href="#home" className="block hover:text-orange-500">
-                  Home
-                </a>
-              </li>
-              <li className="flex items-center">
-                <i className="fas fa-info-circle mr-2"></i> {/* About Icon */}
-                <a href="#about" className="block hover:text-orange-500">
-                  About
-                </a>
-              </li>
-              <li className="flex items-center">
-                <i className="fas fa-users mr-2"></i> {/* Staff Icon */}
-                <a href="#staff" className="block hover:text-orange-500">
-                  Staff
-                </a>
-              </li>
-              <li className="flex items-center">
-                <i className="fas fa-envelope mr-2"></i> {/* Contact Icon */}
-                <a href="#contact" className="block hover:text-orange-500">
-                  Contact
+                  <i className="fas fa-home mr-2"></i> Home
                 </a>
               </li>
               <li>
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full rounded-md px-3 py-1 bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
+                <a href="#about" className="block hover:text-orange-500">
+                  <i className="fas fa-info-circle mr-2"></i> About
+                </a>
+              </li>
+              <li>
+                <a href="#staff" className="block hover:text-orange-500">
+                  <i className="fas fa-users mr-2"></i> Staff
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="block hover:text-orange-500">
+                  <i className="fas fa-envelope mr-2"></i> Contact
+                </a>
               </li>
             </ul>
-          </div>
+          </nav>
         )}
-      </nav>
+      </div>
     </header>
   );
 };
