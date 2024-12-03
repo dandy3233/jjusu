@@ -1,24 +1,24 @@
-import image2 from "../assets/dandy.png";
-import image3 from "../assets/image3.png";
+import image1 from "../assets/dandy.png";
+import image2 from "../assets/image3.png";
 
 export const testimonials = [
   {
-    name: "Racky Henderson",
-    role: "Father",
-    quote: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    image: image3, // Replace with an actual image URL
+    name: "John Doe",
+    role: "Computer Science Student",
+    quote: "Studying here has been an amazing experience. The resources and support are unmatched.",
+    image: image1, // Replace with actual image URL
   },
   {
-    name: "Henry Dee",
-    role: "Mother",
-    quote: "Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
-    image: image3, // Replace with an actual image URL
+    name: "Jane Smith",
+    role: "Engineering Student",
+    quote: "I never thought I could achieve so much in such a short time. The program really pushed me to excel!",
+    image: image2, // Replace with actual image URL
   },
   {
-    name: "Dandy Takilu",
-    role: "Software Engineer",
-    quote: "Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
-    image: image2, // Local image import
+    name: "Samuel Johnson",
+    role: "Design Student",
+    quote: "This university offers incredible opportunities for students to grow both academically and professionally.",
+    image: image1, // Replace with actual image URL
   },
   // Add more testimonials as needed
 ];

@@ -1,24 +1,27 @@
-import React from 'react';
-import ImageCard from './ImageCard'; // Correct path for ImageCard component
-
-// Importing local images
-import image1 from '../assets/member1.png';
-import image2 from '../assets/image2.png';
-import image3 from '../assets/image3.png';
-// import image4 from '../assets/image4.png'; // Add more if needed
-import image5 from '../assets/image2.png';
-// import image6 from '../assets/image6.png';
+import React, { useEffect, useState } from "react";
+import ImageCard from "./ImageCard"; // The reusable card component
 
 const ImageCollage = () => {
-  // Array of image sources (now using the imported images)
-  const imageSources = [image1, image2, image3, image2, image5, image1, image2, image3];
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    // Fetch images and their URLs
+    fetch("http://localhost:8000/api/image-collage/")
+      .then((response) => response.json())
+      .then((data) => setImages(data))
+      .catch((error) => console.error("Error fetching collage images:", error));
+  }, []);
 
   return (
     <div className="p-8">
-      {/* Grid of ImageCards with small gaps */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
-        {imageSources.map((imageSrc, index) => (
-          <ImageCard key={index} imageSrc={imageSrc} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {images.map((image) => (
+          <ImageCard
+            key={image.id}
+            imageSrc={`http://localhost:8000${image.image}`} // Image URL
+            instagramUrl={image.instagram} // Instagram URL
+            tiktokUrl={image.tiktok} // TikTok URL
+          />
         ))}
       </div>
     </div>
